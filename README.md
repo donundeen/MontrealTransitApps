@@ -25,3 +25,10 @@ RUnning on Glitch as a server:
 https://montrealstmapi.glitch.me/107/18
 
 https://glitch.com/edit/#!/montrealstmapi?path=routes.js%3A81%3A0
+
+
+You need the stop_times.txt in the gtfs_stm.zip file here: https://www.stm.info/en/about/developers ("Download GTFS")
+look up your STOP ID (you can find in Google Maps for your stop) and then the stop_sequence. (this might be more complicated if the bus stop has more than one route...)
+
+
+
