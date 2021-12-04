@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "gtfs-realtime-bindings": "^0.0.6",
+    "node-fetch": "^3.1.0",
+    "request": "^2.88.2"
+  },
+  "name": "stmapps",
+  "version": "1.0.0",
+  "description": "some apps and tools and examples for accessing the Montreal Transit API",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "stm",
+    "transit",
+    "montreal"
+  ],
+  "author": "Don Undeen",
+  "license": "ISC"
+}

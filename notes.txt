@@ -1,0 +1,77 @@
+// notes here
+
+
+// docs here: https://developpeurs.stm.info/documentation/gtfsrtv2
+
+// https://api.stm.info/pub/od/gtfs-rt/ic/v2
+// https://api.stm.info/pub/od/gtfs-rt/ic/v2/tripUpdates
+// https://api.stm.info/pub/od/gtfs-rt/ic/v2/vehiclePositions
+// -- Mandatory HTTP header : apikey
+
+
+// my stopID: Stop ID: 52799
+// my route #: 57
+// my sequence number is 21 (see stop_times.txt)
+
+Service status:
+https://api.stm.info/pub/od/i3/v1/messages/etatservice/
+Mandatory HTTP header : apikey
+Mandatory HTTP header : origin (origin header explained)
+
+
+INCOMING_AT	The vehicle is just about to arrive at the stop (on a stop display, the vehicle symbol typically flashes).
+STOPPED_AT	The vehicle is standing at the stop.
+IN_TRANSIT_TO	The vehicle has departed the previous stop and is in transit.
+
+in the code:
+case "INCOMING_AT":
+            case 0:
+                message.currentStatus = 0;
+                break;
+            case "STOPPED_AT":
+            case 1:
+                message.currentStatus = 1;
+                break;
+            case "IN_TRANSIT_TO":
+            case 2:
+                message.currentStatus = 2;
+                break;
+            }
+
+
+
+FeedEntity {
+  id: '29088',
+  vehicle: VehiclePosition {
+    trip: TripDescriptor {
+      tripId: '243237338',
+      startTime: '17:49:00',
+      startDate: '20211203',
+      routeId: '57'
+    },
+    position: Position {
+      latitude: 45.48468780517578,
+      longitude: -73.56544494628906,
+      bearing: 320,
+      speed: 3.8889198303222656
+    },
+    currentStopSequence: 24,
+/*
+current_stop_sequence	uint32	Optional	One	The stop sequence index of the current stop. The meaning of current_stop_sequence (i.e., the stop that it refers to) is determined by current_status. If current_status is missing IN_TRANSIT_TO is assumed.
+
+*/
+
+    currentStatus: 2,
+/*
+currentStatus one of: (I'm guessing at alignment of numbers with text values)
+1: INCOMING_AT	The vehicle is just about to arrive at the stop (on a stop display, the vehicle symbol typically flashes).
+2: STOPPED_AT	The vehicle is standing at the stop.
+3: IN_TRANSIT_TO	The vehicle has departed the previous stop and is in transit.
+
+*/
+
+    timestamp: Long { low: 1638573084, high: 0, unsigned: true },
+    vehicle: VehicleDescriptor { id: '29088' },
+    occupancyStatus: 1
+  }
+}
