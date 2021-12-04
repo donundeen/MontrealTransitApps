@@ -14,3 +14,8 @@ cd ~/Documents/htdocs/MontrealTransitApps;  git pull; git  add --all ; git commi
 - clone the repo
 - run npm install
 - copy secrets.tpl.json to secrets.json and populate/changes the values there as necessary
+
+
+# Usefule Resources
+
+loading and parsing json with arduino esp32: https://randomnerdtutorials.com/decoding-and-encoding-json-with-arduino-or-esp8266/
